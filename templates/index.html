@@ -1,0 +1,10 @@
+{% if short_list %}
+    <ul>
+    {% for short in short_list %}
+        <li>{{ short.text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shorts are available.</p>
+{% endif %}
+

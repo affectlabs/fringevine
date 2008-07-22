@@ -9,6 +9,8 @@ class Company(models.Model):
       pass
    def __unicode__(self):
       return self.name
+   class Meta:
+      verbose_name_plural = "Companies"
 
 class Genre(models.Model):
    name = models.CharField(max_length=255)
