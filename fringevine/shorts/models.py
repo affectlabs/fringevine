@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.newforms import ModelForm
 
 # Create your models here.
    
@@ -69,3 +70,8 @@ class Short(models.Model):
 	  return self.text
    class Admin: 
       pass
+
+class ShortInputForm(ModelForm):
+	class Meta:
+		model = Short
+		fields = ('text')
