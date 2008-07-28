@@ -1,3 +1,14 @@
+
+<div align="center">
+<form action="/shorts/submit/" method="post">
+<input type="text" name="short" maxlength="160" />
+<input type="hidden" name="author" value="3" />
+<input type="hidden" name="show" value="2" />
+<input type="hidden" name="thumbsup" value="0" />
+<input type="submit" value="Send your review" />
+</form>
+</div>
+
 {% if short_list %}
     <ul>
     {% for short in short_list %}

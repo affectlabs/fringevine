@@ -65,5 +65,7 @@ class Short(models.Model):
    source = models.CharField(max_length=255, blank=True, null=True)
    date = models.DateTimeField(default=datetime.now)
    thumbsup = models.DecimalField(max_digits=5,decimal_places=3)
+   def __unicode__(self):
+	  return self.text
    class Admin: 
       pass
