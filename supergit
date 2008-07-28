@@ -1,5 +1,7 @@
 #/bin/bash
 
+mysqldump -u root -psq42db fv_db > fv_db_backup.sql
+
 git add *
 git commit -a
 git push
