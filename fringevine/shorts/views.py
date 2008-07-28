@@ -18,8 +18,8 @@ def submit(request):
 		return HttpResponseRedirect('/')
 	if form.is_valid():
 		instance = form.save(commit=False)
-		defaultAuthor = Author.objects.get(pk=3)
-		defaultShow = Show.objects.get(pk=2)
+		defaultAuthor = Author.objects.get(pk=1)
+		defaultShow = Show.objects.get(pk=1)
 		instance.author = defaultAuthor
 		instance.show = defaultShow
 		instance.thumbsup = '0'
