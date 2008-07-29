@@ -1,0 +1,19 @@
+
+<div align="center">
+<form action="/search" method="post">
+   {{ form.as_table }}
+<input type="Submit" value="Go" />
+</form>
+</div>
+
+QUERY: {{ query }}
+<p>
+{% if results %}
+  {% for short in results %}
+     <p>{{ short }}</p>
+  {% endfor %}
+{% else %}
+<p>No results found. Maybe you should try a less specific search?</p>
+{% endif %}
+	
+	

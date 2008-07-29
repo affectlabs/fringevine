@@ -378,7 +378,9 @@ CREATE TABLE `shorts_short` (
   `thumbsup` decimal(5,3) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `shorts_short_author_id` (`author_id`),
-  KEY `shorts_short_show_id` (`show_id`)
+  KEY `shorts_short_show_id` (`show_id`),
+  FULLTEXT KEY `shorts_short_ft` (`text`,`source`),
+  FULLTEXT KEY `in_shorts_short` (`text`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --

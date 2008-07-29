@@ -3,7 +3,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import get_object_or_404, render_to_response
-from fringevine.shorts.models import Short, ShortInputForm, Author, Show
+from fringevine.shorts.models import Short, ShortInputForm, Author, Show, SearchForm
 from django import newforms as forms
 
 def index(request):
@@ -31,3 +31,16 @@ def submit(request):
 	
 def success(request):
     return render_to_response('shorts/success.html')
+
+def search(request):
+	if request.method == 'POST':
+		form = SearchForm(request.POST)
+	else:
+	    form = SearchForm()
+	if form.is_valid():
+		query = form.cleaned_data['query']
+		results = Short.objects.filter(text__search=query)
+		return render_to_response('search.html', {'form': form, 'query': query, 'results': results })
+	else:
+		query = 'No query entered'
+	return render_to_response('search.html', {'form': form })

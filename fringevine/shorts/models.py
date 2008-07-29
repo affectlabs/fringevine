@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.newforms import ModelForm
+from django import newforms as forms
 
 # Create your models here.
    
@@ -75,3 +76,6 @@ class ShortInputForm(ModelForm):
 	class Meta:
 		model = Short
 		fields = ('text')
+		
+class SearchForm(forms.Form):
+	query = forms.CharField(label='Query',max_length=255)

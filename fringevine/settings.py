@@ -81,3 +81,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'fringevine.shorts',
 )
+
+APPEND_SLASH = False
